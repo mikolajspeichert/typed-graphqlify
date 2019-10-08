@@ -111,6 +111,8 @@ function renderParams(params?: Params, brackets = true): string {
     let params: string
     if (typeof value === 'object') {
       params = `{${renderParams(value, false)}}`
+    } else if (typeof value === 'string') {
+      params = `"${value}"`
     } else {
       params = `${value}`
     }
